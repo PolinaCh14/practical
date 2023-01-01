@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <title>Add Lipstick</title>
+            <meta charset="UTF-8"/>
+     
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+       
+      <link th:href="@{/bootstrap/css/bootstrap.min.css}"
+                rel="stylesheet" media="screen"/>
+                 
+        
+      <script th:src="@{/jquery/jquery.min.js}"></script>  
+      <script th:src="@{/popper/popper.min.js}"></script>  
+      <script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>   
+          
+   </head>
+   
+   <body>      
+      <th:block th:include="/menuL"></th:block>
+       
+      <h2>Add Lipstick</h2>
+       
+      <form th:action="@{/addLipstick}" th:object="${addLipstickForm}" method="POST">
+     
+	 <div class="form-group">
+			<label for="name">Product name</label>
+			 <input type="text"	class="form-control"  placeholder="Enter product name" th:field="*{name}" />
+		</div>
+			 <div class="form-group">
+			<label for="age">Age</label>
+			 <input type="text"	class="form-control"  placeholder="Enter age" th:field="*{age}" />
+		</div>
+			<div class="form-group">
+			<label for="company">Company</label>
+			 <input type="text"	class="form-control"  placeholder="Enter company" th:field="*{company}" />
+		</div>
+			<div class="form-group">
+			<label for="spf">Herbs</label>
+			 <input type="text"	class="form-control"  placeholder="Enter herbs" th:field="*{herbs}" />
+		</div>
+		<div class="form-group">
+			<label for="spf">Color</label>
+			 <input type="text"	class="form-control"  placeholder="Enter spf" th:field="*{color}" />
+		</div>
+
+              <td><input type="submit"  class="btn btn-danger"  value="Add"/></td>
+           </tr>      
+         </table>      
+      </form>
+       
+   </body>
+</html>
